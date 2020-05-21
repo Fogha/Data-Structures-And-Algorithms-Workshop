@@ -20,9 +20,9 @@ const dominator = (arr) => {
   }
   
   if(dominator) {
-    return dominator;
+    return arr.indexOf(dominator);
   }
-  return 'It doesnt exist'
+  return -1
 }
 
 console.log(dominator([3, 4, 2, 3, 3, 2, -1, 3, 3]));
