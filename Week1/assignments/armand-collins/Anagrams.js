@@ -8,7 +8,6 @@ function getAllSubstrings(str) {
       result.push(str.slice(i, j));
     }
   }
-  console.log(result)
   return result;
 }
 
@@ -26,12 +25,10 @@ function isAnagramMap(str1, str2) {
   var map = new Map();
   for (let i = 0; i < str1.length; i++) {
     let val1 = map.get(str1[i]);
-    console.log(str1[i]);
     if (!val1) {
       map.set(str1[i], 1);
     } else {
       map.set(str1[i], val1 + 1);
-      console.log(val1, val1+1);
     }
 
     let val2 = map.get(str2[i]);
@@ -55,16 +52,19 @@ function isAnagramMap(str1, str2) {
 
 function anagramCheck(arr) {
   let final = [];
+  let count = 0;
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (isAnagramMap(arr[i], arr[j])) {
         final.push(...[arr[i], arr[j]]);
+        count++
       }
     }
   }
-  return final;
+  //return final;
+  return count
 }
 
 var theString = 'mmom';
-getAllSubstrings(theString);
+getAllSubstrings('mom');
 console.log(anagramCheck(result))
